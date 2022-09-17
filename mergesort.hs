@@ -12,6 +12,7 @@ splitHalf xs = splitAt size xs
   where
     size = length xs `div` 2
 
+
 -- | Merge two sorted lists into one sorted list.
 merge :: (Ord a) => [a] -> [a] -> [a]
 merge [] ys = ys
@@ -20,6 +21,7 @@ merge xall@(x : xs) yall@(y : ys)
   | x <= y = x : merge xs yall
   | otherwise = y : merge xall ys
 
+main :: IO ()
 main = do
   print $ mergesort [1, 3, 2, 5, 4, 7, 1, 12]
   print $ mergesort "the quick brown fox jumps over the lazy dog"
